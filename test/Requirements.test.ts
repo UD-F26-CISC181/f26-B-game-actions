@@ -12,7 +12,7 @@ describe("Requirment Class", () => {
     );
     const swapRequirements: Requirements = new Requirements(ActionType.Swap);
 
-    test("(1 pts) Create needsEndLocation", () => {
+    test("(2 pts)  needsEndLocation", () => {
         // Needs end location selected
         expect(moveRequirements.needsEndLocation()).toEqual(true);
         expect(spawnRequirements.needsEndLocation()).toEqual(false);
@@ -22,7 +22,7 @@ describe("Requirment Class", () => {
         expect(swapRequirements.needsEndLocation()).toEqual(true);
     });
 
-    test("(1 pts) Create needsEmptyEnd", () => {
+    test("(1 pts) needsEmptyEnd", () => {
         // empty end
         expect(moveRequirements.needsEmptyEnd()).toEqual(true);
         expect(renewRequirements.needsEmptyEnd()).toEqual(false);
@@ -31,7 +31,7 @@ describe("Requirment Class", () => {
         expect(swapRequirements.needsEmptyEnd()).toEqual(false);
     });
 
-    test("(1 pts) Create needsOppTeamOnEnd", () => {
+    test("(2 pts) needsOppTeamOnEnd", () => {
         // Opponent on end location
         expect(renewRequirements.needsOppTeamOnEnd()).toEqual(false);
         expect(attackRequirements.needsOppTeamOnEnd()).toEqual(true);
@@ -39,3 +39,4 @@ describe("Requirment Class", () => {
         expect(swapRequirements.needsOppTeamOnEnd()).toEqual(true);
     });
 });
+
