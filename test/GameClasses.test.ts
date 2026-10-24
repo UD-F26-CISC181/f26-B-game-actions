@@ -22,7 +22,7 @@ describe("Requirment Class", () => {
         expect(swapRequirements.needsEndLocation()).toEqual(true);
     });
 
-    test("(1 pts) Create needsEmptyEnd", () => {
+    test("(1 pts)  needsEmptyEnd", () => {
         // empty end
         expect(moveRequirements.needsEmptyEnd()).toEqual(true);
         expect(renewRequirements.needsEmptyEnd()).toEqual(false);
