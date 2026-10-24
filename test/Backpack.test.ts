@@ -19,14 +19,14 @@ describe("Backpack Class", () => {
     });
 
     test("(1 pts) setter", () => {
-        const abilities = [abilitySpawn, abilityRenew];
-        const backpack = new Backpack([]);
+        const abilities: Ability[] = [abilitySpawn, abilityRenew];
+        const backpack: Backpack = new Backpack([]);
         backpack.setAbilities(abilities);
         expect(backpack.getAbilities()).toBe(abilities);
     });
 
     test("(1 pts) isAvailable", () => {
-        const abilities = [
+        const abilities: Ability[] = [
             new Ability(ActionType.Spawn, false),
             new Ability(ActionType.Renew, false),
             new Ability(ActionType.Renew, false),
@@ -36,7 +36,7 @@ describe("Backpack Class", () => {
         abilities[1].setExpired(true);
         abilities[3].setExpired(true);
 
-        const backpack = new Backpack(abilities);
+        const backpack: Backpack = new Backpack(abilities);
         expect(backpack.isAvailable(ActionType.Spawn)).toBe(true);
         expect(backpack.isAvailable(ActionType.Renew)).toBe(true);
         expect(backpack.isAvailable(ActionType.Swap)).toBe(false);
@@ -47,13 +47,18 @@ describe("Backpack Class", () => {
         const abilRenew2: Ability = new Ability(ActionType.Renew, false);
         const abilRenew3: Ability = new Ability(ActionType.Renew, false);
         const abilSwap: Ability = new Ability(ActionType.Swap, false);
-        const abilities = [abilRenew1, abilRenew2, abilSwap, abilRenew3];
+        const abilities: Ability[] = [
+            abilRenew1,
+            abilRenew2,
+            abilSwap,
+            abilRenew3,
+        ];
 
         abilRenew2.setExpired(true);
         abilSwap.setExpired(true);
         abilRenew3.setExpired(true);
 
-        const backpack = new Backpack(abilities);
+        const backpack: Backpack = new Backpack(abilities);
         // Renew1 is available, Renew23 is expired, Swap is expired, Renew is expired
         // change ONE Renew ablility expire field to false
         backpack.setAbilityExpiration(ActionType.Renew, false, false);
@@ -124,8 +129,8 @@ describe("Backpack Class", () => {
         abilitySwap.setExpired(false);
         abilityRenew.setExpired(true);
 
-        const abilities = [abilitySpawn, abilitySwap, abilityRenew];
-        const backpack = new Backpack(abilities);
+        const abilities: Ability[] = [abilitySpawn, abilitySwap, abilityRenew];
+        const backpack: Backpack = new Backpack(abilities);
         expect(backpack.getAbilities()[0].isExpired()).toBe(true);
         expect(backpack.getAbilities()[1].isExpired()).toBe(false);
         expect(backpack.getAbilities()[2].isExpired()).toBe(true);
@@ -140,14 +145,14 @@ describe("Backpack Class", () => {
     });
 
     test("(1 pts) empty backpack", () => {
-        const abilities = [abilitySpawn, abilitySwap, abilityRenew];
-        const backpack = new Backpack(abilities);
+        const abilities: Ability[] = [abilitySpawn, abilitySwap, abilityRenew];
+        const backpack: Backpack = new Backpack(abilities);
         backpack.emptyBackpack();
         expect(backpack.getAbilities().length).toEqual(0);
     });
 
     test("(1 pts) clone", () => {
-        const abilities = [
+        const abilities: Ability[] = [
             new Ability(ActionType.Renew, false),
             new Ability(ActionType.Spawn, true),
             new Ability(ActionType.Swap, false),
@@ -157,8 +162,8 @@ describe("Backpack Class", () => {
         abilities[0].setExpired(true);
         abilities[3].setExpired(true);
 
-        const backpack = new Backpack(abilities);
-        const copyBP = backpack.clone();
+        const backpack: Backpack = new Backpack(abilities);
+        const copyBP: Backpack = backpack.clone();
         expect(copyBP).not.toBe(backpack);
         expect(copyBP.getAbilities()).not.toBe(backpack.getAbilities());
 
@@ -198,7 +203,7 @@ describe("Backpack Class", () => {
     });
 
     test("(1 pts) toString", () => {
-        const abilities = [
+        const abilities: Ability[] = [
             new Ability(ActionType.Renew, true),
             new Ability(ActionType.Renew, false),
             new Ability(ActionType.Swap, true),
@@ -206,7 +211,7 @@ describe("Backpack Class", () => {
         abilities[0].setExpired(true);
         abilities[2].setExpired(true);
 
-        const backpack1 = new Backpack(abilities);
+        const backpack1: Backpack = new Backpack(abilities);
 
         expect(backpack1.toString()).toEqual(
             "[ Renew:expired Renew:available Swap:expired ]",

@@ -4,7 +4,7 @@ import { TestGame } from "./TestGame";
 
 describe("GameF26", () => {
     test("(1 pts)  GameF26 hierarchy", () => {
-        let game = new GameF26(6, 8, "Blue", "Red", 3);
+        let game: Game = new GameF26(6, 8, "Blue", "Red", 3);
         expect(game instanceof Game).toEqual(true);
         expect(game instanceof GameF26).toEqual(true);
     });

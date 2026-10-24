@@ -20,7 +20,7 @@ describe("Action Move", () => {
     test("(3 pts)  ActionMove - testing valid action for Start Location Requirements ", () => {
         // try an invalid move - start square
         // out of bounds  [9][-1]
-        let moveHenInvalid = new ActionMove(
+        let moveHenInvalid: ActionMove = new ActionMove(
             testGame.game,
             new BoardLocation(9, -1),
             new BoardLocation(1, 1),
@@ -47,7 +47,7 @@ describe("Action Move", () => {
     test("(3 pts)  ActionMove - testing valid action for End Location Requirements ", () => {
         // try an invalid move - the end square
         // out of bounds [8][8]
-        let moveHenTester = new ActionMove(
+        let moveHenTester: ActionMove = new ActionMove(
             testGame.game,
             new BoardLocation(0, 0),
             new BoardLocation(8, 8),

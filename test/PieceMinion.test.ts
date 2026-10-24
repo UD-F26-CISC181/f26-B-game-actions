@@ -8,7 +8,7 @@ import { ActionType } from "../src/game/elements/Utilities";
 describe("Piece Minion", () => {
     // Minion backpack
     // Spawn - available, Swap - available, Spawn - available
-    const backpackMin = new Backpack([
+    const backpackMin: Backpack = new Backpack([
         new Ability(ActionType.Spawn, false),
         new Ability(ActionType.Swap, false),
         new Ability(ActionType.Spawn, false),

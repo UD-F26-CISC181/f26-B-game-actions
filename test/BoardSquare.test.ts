@@ -7,7 +7,9 @@ import { ActionType } from "../src/game/elements/Utilities";
 
 describe("BoardSquare", () => {
     const myBoardSquare: BoardSquare = new BoardSquare("black");
-    const aBackpack = new Backpack([new Ability(ActionType.Spawn, false)]);
+    const aBackpack: Backpack = new Backpack([
+        new Ability(ActionType.Spawn, false),
+    ]);
     const aBlueHen: PieceBlueHen = new PieceBlueHen(
         "H",
         "Red",

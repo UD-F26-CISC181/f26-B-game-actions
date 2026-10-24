@@ -31,7 +31,9 @@ describe("Team - Problem 5", () => {
     );
     // Minion backpack
     // Spawn - available, Revive - available
-    const backpackMin = new Backpack([new Ability(ActionType.Spawn, false)]);
+    const backpackMin: Backpack = new Backpack([
+        new Ability(ActionType.Spawn, false),
+    ]);
     const aMinion: Piece = new PieceMinion("M", aTeamColor, true, backpackMin);
 
     const aPieces: Piece[] = [aBlueHen, aMinion];

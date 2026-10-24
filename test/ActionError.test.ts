@@ -1,14 +1,18 @@
-import { ActionType } from "../src/game/elements/Utilities";
 import { ActionError } from "../src/ActionError";
+import { ActionType } from "../src/game/elements/Utilities";
+//import { ActionError } from "../src/ActionError";
 describe("ActionError Class", () => {
     test("(1 pts) Create Instance of ActionError ", () => {
-        const actionError = new ActionError("Spawn Error", ActionType.Spawn);
+        const actionError: ActionError = new ActionError(
+            "Spawn Error",
+            ActionType.Spawn,
+        );
         expect(actionError).toBeInstanceOf(ActionError);
         expect(actionError).toBeInstanceOf(Error);
     });
 
     test("(2 pts) ActionError member fields", () => {
-        const actionError = new ActionError(
+        const actionError: ActionError = new ActionError(
             "Error in Attack Action",
             ActionType.Attack,
         );
@@ -17,4 +21,3 @@ describe("ActionError Class", () => {
         expect(actionError.message).toEqual("Error in Attack Action");
     });
 });
-

@@ -30,7 +30,7 @@ describe("Action Spawn", () => {
     test("(2 pts)  ActionSpawn -  testing valid action for Start Location Requirement", () => {
         // try an invalid spawn - start square
         // out of bounds  [0][10]
-        let spawnMinionInvalid = new ActionSpawn(
+        let spawnMinionInvalid: ActionSpawn = new ActionSpawn(
             testGame.game,
             new BoardLocation(0, 10),
             endSquare,
@@ -126,7 +126,9 @@ describe("Action Spawn", () => {
 
             // new minion should be somewhere on the board
             // find its location
-            let squares = testGame.game.getGameBoard().getAllSquares();
+            let squares: BoardSquare[][] = testGame.game
+                .getGameBoard()
+                .getAllSquares();
             let spawnLocation: BoardLocation | null = null;
             for (let row = 0; row < squares.length; row++) {
                 for (let col = 0; col < squares[row].length; col++) {

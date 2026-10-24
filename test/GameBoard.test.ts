@@ -15,8 +15,12 @@ describe("GameBoard - ", () => {
     const cornerLocation: BoardLocation = new BoardLocation(0, 0);
     const myCornerSquare: BoardSquare = myGameBoard1.getSquare(cornerLocation);
 
-    const aBackpack = new Backpack([new Ability(ActionType.Spawn, false)]);
-    const bBackpack = new Backpack([new Ability(ActionType.Renew, false)]);
+    const aBackpack: Backpack = new Backpack([
+        new Ability(ActionType.Spawn, false),
+    ]);
+    const bBackpack: Backpack = new Backpack([
+        new Ability(ActionType.Renew, false),
+    ]);
     const aBlueHen: PieceBlueHen = new PieceBlueHen(
         "H",
         "Red",
